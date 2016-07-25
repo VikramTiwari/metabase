@@ -32,7 +32,7 @@ describe('card', () => {
 
     describe('utf8_to_b64', () => {
         it('should encode with non-URL-safe characters', () => {
-            expect(utf8_to_b64("  ?").indexOf("/")).toEqual(3);
+            expect(utf8_to_b64("  ?").indexOf("")).toEqual(3);
             expect(utf8_to_b64("  ?")).toEqual("ICA/");
         });
     });
@@ -45,7 +45,7 @@ describe('card', () => {
 
     describe('utf8_to_b64url', () => {
         it('should encode with URL-safe characters', () => {
-            expect(utf8_to_b64url("  ?").indexOf("/")).toEqual(-1);
+            expect(utf8_to_b64url("  ?").indexOf("")).toEqual(-1);
             expect(utf8_to_b64url("  ?")).toEqual("ICA_");
         });
     });

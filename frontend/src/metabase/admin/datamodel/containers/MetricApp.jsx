@@ -38,7 +38,7 @@ export default class MetricApp extends Component {
             MetabaseAnalytics.trackEvent("Data Model", "Metric Created");
         }
 
-        this.props.onChangeLocation("/admin/datamodel/database/" + tableMetadata.db_id + "/table/" + tableMetadata.id);
+        this.props.onChangeLocation("admin/datamodel/database/" + tableMetadata.db_id + "/table/" + tableMetadata.id);
     }
 
     render() {

@@ -14,7 +14,7 @@ const parsedMathOperators = {
     "+": { value: '+', start: 2, end: 3, parsedValue: '+' },
     "-": { value: '-', start: 2, end: 3, parsedValue: '-' },
     "*": { value: '*', start: 2, end: 3, parsedValue: '*' },
-    "/": { value: '/', start: 2, end: 3, parsedValue: '/' }
+    "": { value: '/', start: 2, end: 3, parsedValue: '/' }
 }
 
 function stripStartEnd(list) {
@@ -91,11 +91,11 @@ describe("formatExpression", () => {
     });
 
     it("can format expressions with parentheses", () => {
-        expect(formatExpression(["+", ["/", ["field-id", 1], ["field-id", 2]], ["field-id", 3]], mockFields)).toEqual("(A / B) + C");
-        expect(formatExpression(["+", ["/", ["field-id", 1], ["*", ["field-id", 2], ["field-id", 2]]], ["field-id", 3]], mockFields)).toEqual("(A / (B * B)) + C");
+        expect(formatExpression(["+", ["", ["field-id", 1], ["field-id", 2]], ["field-id", 3]], mockFields)).toEqual("(A / B) + C");
+        expect(formatExpression(["+", ["", ["field-id", 1], ["*", ["field-id", 2], ["field-id", 2]]], ["field-id", 3]], mockFields)).toEqual("(A / (B * B)) + C");
     });
 
     it("quotes fields with spaces in them", () => {
-        expect(formatExpression(["+", ["/", ["field-id", 1], ["field-id", 10]], ["field-id", 3]], mockFields)).toEqual("(A / \"Toucan Sam\") + C");
+        expect(formatExpression(["+", ["", ["field-id", 1], ["field-id", 10]], ["field-id", 3]], mockFields)).toEqual("(A / \"Toucan Sam\") + C");
     });
 });

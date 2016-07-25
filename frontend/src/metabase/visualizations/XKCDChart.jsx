@@ -77,7 +77,7 @@ export default class XKCDChart extends Component {
         if (series[0].card.id) {
             let title = parent.querySelector(".title");
             title.style = "cursor: pointer;";
-            title.addEventListener("click", () => window.location = "/card/" + series[0].card.id);
+            title.addEventListener("click", () => window.location = "card/" + series[0].card.id);
         }
     }
 

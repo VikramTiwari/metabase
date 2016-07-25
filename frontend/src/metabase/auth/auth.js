@@ -29,7 +29,7 @@ export const login = createThunkAction("AUTH_LOGIN", function(credentials, onCha
             MetabaseAnalytics.trackEvent('Auth', 'Login');
             // TODO: redirect after login (carry user to intended destination)
             // this is ridiculously stupid.  we have to wait (300ms) for the cookie to actually be set in the browser :(
-            setTimeout(() => onChangeLocation("/"), 300);
+            setTimeout(() => onChangeLocation(""), 300);
 
         } catch (error) {
             return error;
@@ -53,7 +53,7 @@ export const loginGoogle = createThunkAction("AUTH_LOGIN_GOOGLE", function(googl
 
             // TODO: redirect after login (carry user to intended destination)
             // this is ridiculously stupid.  we have to wait (300ms) for the cookie to actually be set in the browser :(
-            setTimeout(() => onChangeLocation("/"), 300);
+            setTimeout(() => onChangeLocation(""), 300);
 
         } catch (error) {
             clearGoogleAuthCredentials();
@@ -79,7 +79,7 @@ export const logout = createThunkAction("AUTH_LOGOUT", function(onChangeLocation
         }
         MetabaseAnalytics.trackEvent('Auth', 'Logout');
 
-        setTimeout(() => onChangeLocation("/auth/login"), 300);
+        setTimeout(() => onChangeLocation("auth/login"), 300);
     };
 });
 

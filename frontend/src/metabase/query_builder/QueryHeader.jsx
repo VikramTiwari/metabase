@@ -151,7 +151,7 @@ export default class QueryHeader extends Component {
     }
 
     onGoBack() {
-        this.props.onChangeLocation(this.props.fromUrl || "/");
+        this.props.onChangeLocation(this.props.fromUrl || "");
     }
 
     async onFetchRevisions({ entity, id }) {

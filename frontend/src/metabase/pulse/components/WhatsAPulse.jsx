@@ -15,7 +15,7 @@ export default class WhatsAPulse extends Component {
                 <div className="mx4">
                     <RetinaImage
                         width={574}
-                        src="/app/img/pulse_empty_illustration.png"
+                        src="app/img/pulse_empty_illustration.png"
                         forceOriginalDimensions={false}
                     />
                 </div>

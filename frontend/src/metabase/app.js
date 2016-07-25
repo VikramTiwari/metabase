@@ -141,9 +141,9 @@ angular.module('metabase', [
     $routeProvider.when('/auth/logout', { ...route, template: '<div mb-redux-component class="full-height"  />' });
     $routeProvider.when('/auth/reset_password/:token', { ...route, template: '<div mb-redux-component class="full-height" />' });
 
-    $routeProvider.when('/card/', { redirectTo: () => ("/questions/all") });
+    $routeProvider.when('/card/', { redirectTo: () => ("questions/all") });
     $routeProvider.when('/card/:cardId', { ...route, template: '<div mb-redux-component />' });
-    $routeProvider.when('/card/:cardId/:serializedCard', { redirectTo: (routeParams) => ("/card/"+routeParams.cardId+"#"+routeParams.serializedCard) });
+    $routeProvider.when('/card/:cardId/:serializedCard', { redirectTo: (routeParams) => ("card/"+routeParams.cardId+"#"+routeParams.serializedCard) });
 
     $routeProvider.when('/dash/:dashboardId', route);
 
@@ -292,7 +292,7 @@ angular.module('metabase', [
         $scope.createDashboardFn = async function(newDashboard) {
             var dashboard = await Dashboard.create(newDashboard).$promise;
             $rootScope.$broadcast("dashboard:create", dashboard.id);
-            $location.path("/dash/" + dashboard.id);
+            $location.path("dash/" + dashboard.id);
 
             // this is important because it allows our caller to perform any of their own actions after the promis resolves
             return dashboard;

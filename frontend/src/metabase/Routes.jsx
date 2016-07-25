@@ -49,7 +49,7 @@ export default class Routes extends Component {
     render() {
         return (
             <ReduxRouter>
-                <Route path="/" component={this._forwardProps(HomepageApp, ["onChangeLocation"])} />
+                <Route path="" component={this._forwardProps(HomepageApp, ["onChangeLocation"])} />
 
                 <Route path="/admin">
                     <Route path="databases" component={DatabaseListApp} />
@@ -72,19 +72,19 @@ export default class Routes extends Component {
                     <Route path="settings" component={this._forwardProps(SettingsEditorApp, ["refreshSiteSettings"])} />
                 </Route>
 
-                <Route path="/auth/forgot_password" component={ForgotPasswordApp} />
-                <Route path="/auth/login" component={this._forwardProps(LoginApp, ["onChangeLocation", "setSessionFn"])} />
-                <Route path="/auth/logout" component={this._forwardProps(LogoutApp, ["onChangeLocation"])} />
-                <Route path="/auth/reset_password/:token" component={this._forwardProps(PasswordResetApp, ["onChangeLocation"])} />
-                <Route path="/auth/google_no_mb_account" component={GoogleNoAccount} />
+                <Route path="auth/forgot_password" component={ForgotPasswordApp} />
+                <Route path="auth/login" component={this._forwardProps(LoginApp, ["onChangeLocation", "setSessionFn"])} />
+                <Route path="auth/logout" component={this._forwardProps(LogoutApp, ["onChangeLocation"])} />
+                <Route path="auth/reset_password/:token" component={this._forwardProps(PasswordResetApp, ["onChangeLocation"])} />
+                <Route path="auth/google_no_mb_account" component={GoogleNoAccount} />
 
-                <Route path="/card/:cardId" component={this._forwardProps(QueryBuilder, ["onChangeLocation", "broadcastEventFn", "updateUrl"])} />
+                <Route path="card/:cardId" component={this._forwardProps(QueryBuilder, ["onChangeLocation", "broadcastEventFn", "updateUrl"])} />
 
-                <Route path="/dash/:dashboardId" component={this._forwardProps(DashboardApp, ["onChangeLocation", "onChangeLocationSearch", "onBroadcast"])} />
+                <Route path="dash/:dashboardId" component={this._forwardProps(DashboardApp, ["onChangeLocation", "onChangeLocationSearch", "onBroadcast"])} />
 
-                <Route path="/pulse" component={this._forwardProps(PulseListApp, ["onChangeLocation"])} />
-                <Route path="/pulse/create" component={this._forwardProps(PulseEditApp, ["onChangeLocation"])} />
-                <Route path="/pulse/:pulseId" component={this._forwardProps(PulseEditApp, ["onChangeLocation"])} />
+                <Route path="pulse" component={this._forwardProps(PulseListApp, ["onChangeLocation"])} />
+                <Route path="pulse/create" component={this._forwardProps(PulseEditApp, ["onChangeLocation"])} />
+                <Route path="pulse/:pulseId" component={this._forwardProps(PulseEditApp, ["onChangeLocation"])} />
 
                 <Route path="/q" component={this._forwardProps(QueryBuilder, ["onChangeLocation", "broadcastEventFn", "updateUrl"])} />
 
@@ -96,7 +96,7 @@ export default class Routes extends Component {
 
                 <Route path="/setup" component={this._forwardProps(SetupApp, ["setSessionFn"])} />
 
-                <Route path="/user/edit_current" component={UserSettingsApp} />
+                <Route path="user/edit_current" component={UserSettingsApp} />
 
                 <Route path="/unauthorized" component={Unauthorized} />
                 <Route path="/*" component={NotFound} />

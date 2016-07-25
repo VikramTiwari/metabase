@@ -10,7 +10,7 @@ export default class WorldMap extends ChoroplethMap {
     static iconName = "countrymap";
 
     static defaultProps = {
-        geoJsonPath: "/app/charts/world.json",
+        geoJsonPath: "app/charts/world.json",
         projection: d3.geo.mercator(),
         getRowKey: (row) => String(row[0]).toLowerCase(),
         getRowValue: (row) => row[1] || 0,

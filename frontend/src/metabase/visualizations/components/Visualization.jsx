@@ -122,7 +122,7 @@ export default class Visualization extends Component {
                 : isDashboard && noResults ?
                     <div className="flex-full px1 pb1 text-centered text-slate flex flex-column layout-centered">
                         <Tooltip tooltip="No results!" isEnabled={small}>
-                            <img src="/app/img/no_results.svg" />
+                            <img src="app/img/no_results.svg" />
                         </Tooltip>
                         { !small &&
                             <span className="h4 text-bold">

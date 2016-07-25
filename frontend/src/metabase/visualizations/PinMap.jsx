@@ -113,7 +113,7 @@ export default class PinMap extends Component {
                     let marker = new google.maps.Marker({
                         position: new google.maps.LatLng(row[latColIndex], row[lonColIndex]),
                         map: map,
-                        icon: "/app/img/pin.png"
+                        icon: "app/img/pin.png"
                     });
                     marker.addListener("click", () => {
                         let tooltipElement = document.createElement("div");

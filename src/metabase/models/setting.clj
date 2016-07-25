@@ -254,6 +254,12 @@
    :google_auth_client_id (get :google-auth-client-id)})
 
 
+(defn base-href
+  "Return the base-href setting to be used in the <base href=\"...\" /> tag of index.html"
+  []
+  (let [href (get* :base-href)]
+    (if (s/blank? href) "/" href)))
+
 ;;; # IMPLEMENTATION
 
 (defn- restore-cache-if-needed []

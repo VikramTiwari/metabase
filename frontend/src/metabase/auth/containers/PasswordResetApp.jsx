@@ -106,7 +106,7 @@ export default class PasswordResetApp extends Component {
                                     <h3 className="Login-header Form-offset mt4">Whoops, that's an expired link</h3>
                                     <p className="Form-offset mb4 mr4">
                                         For security reasons, password reset links expire after a little while. If you still need
-                                        to reset your password, you can <a href="/auth/forgot_password" className="link">request a new reset email</a>.
+                                        to reset your password, you can <a href="auth/forgot_password" className="link">request a new reset email</a>.
                                     </p>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ export default class PasswordResetApp extends Component {
                                       { newUserJoining ?
                                       <a href="/?new" className="Button Button--primary">Sign in with your new password</a>
                                       :
-                                      <a href="/" className="Button Button--primary">Sign in with your new password</a>
+                                      <a href="" className="Button Button--primary">Sign in with your new password</a>
                                       }
                                   </p>
                               </div>

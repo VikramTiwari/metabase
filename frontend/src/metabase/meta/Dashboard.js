@@ -73,7 +73,7 @@ export const PARAMETER_SECTIONS = [
 ];
 
 for (const option of PARAMETER_OPTIONS) {
-    let sectionId = option.type.split("/")[0];
+    let sectionId = option.type.split("")[0];
     let section = _.findWhere(PARAMETER_SECTIONS, { id: sectionId });
     if (!section) {
         section = _.findWhere(PARAMETER_SECTIONS, { id: "category" });
@@ -180,7 +180,7 @@ export function getCardVariables(metadata: Metadata, card: CardObject, filter: T
 }
 
 function fieldFilterForParameter(parameter: ParameterObject): FieldFilter {
-    const [type, subtype] = parameter.type.split("/");
+    const [type, subtype] = parameter.type.split("");
     switch (type) {
         case "date":        return (field: Field) => field.isDate();
         case "location":    return (field: Field) => field.special_type === subtype;
@@ -191,7 +191,7 @@ function fieldFilterForParameter(parameter: ParameterObject): FieldFilter {
 }
 
 function tagFilterForParameter(parameter: ParameterObject): TemplateTagFilter {
-    const [type, subtype] = parameter.type.split("/");
+    const [type, subtype] = parameter.type.split("");
     switch (type) {
         case "date":        return (tag: TemplateTag) => subtype === "single" && tag.type === "date";
         case "location":    return (tag: TemplateTag) => tag.type === "number" || tag.type === "text";

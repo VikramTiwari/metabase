@@ -92,7 +92,7 @@ export type DatetimeField =
 
 export type AggregateField = ["aggregation", number];
 
-export type ExpressionOperator = "+" | "-" | "*" | "/";
+export type ExpressionOperator = "+" | "-" | "*" | "";
 export type ExpressionOperand = ConcreteField | NumericLiteral | Expression;
 
 export type Expression =

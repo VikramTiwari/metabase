@@ -93,7 +93,7 @@ export default class LoginApp extends Component {
         const { user, onChangeLocation } = newProps;
             // if we already have a user then we shouldn't be logging in
         if (user) {
-            onChangeLocation("/");
+            onChangeLocation("");
         }
     }
 
@@ -158,7 +158,7 @@ export default class LoginApp extends Component {
                                 <button className={cx("Button Grid-cell", {'Button--primary': this.state.valid})} disabled={!this.state.valid}>
                                     Sign in
                                 </button>
-                                <a className="Grid-cell py2 sm-py0 text-grey-3 md-text-right text-centered flex-full link" href="/auth/forgot_password" onClick={(e) => { window.OSX ? window.OSX.resetPassword() : null }}>I seem to have forgotten my password</a>
+                                <a className="Grid-cell py2 sm-py0 text-grey-3 md-text-right text-centered flex-full link" href="auth/forgot_password" onClick={(e) => { window.OSX ? window.OSX.resetPassword() : null }}>I seem to have forgotten my password</a>
                             </div>
                         </form>
                     </div>
